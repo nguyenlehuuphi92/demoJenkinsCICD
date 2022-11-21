@@ -133,6 +133,11 @@ public class Level_23_Selenium_I_Local extends BaseTest {
 		Assert.assertEquals(customerInforPage.getTextboxValueByID(driver, "Email"), emailAddress);
 
 	}
+	
+	@Test
+	public void User_04_My_Account() {
+		
+	}
 
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
