@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopCommerce - User" parallel="method" thread-count="3">
+
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+		<!--<listener class-name="reportConfig.ReportNGListener" /> -->
+		<!--<listener class-name="reportConfig.ExtentTestListener" /> -->
+		<!--<listener class-name="reportConfig.AllureTestListener" />-->
+		<!--<listener class-name="org.uncommons.reportng.HTMLReporter" /> -->
+		<!--<listener class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
+	</listeners>
+
+	<!-- Global-->
+	<parameter name="environment" value="dev" />
+
+	<test name="Run on CHROME">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.nopcommerce.cloud.Level_23_Selenium_I_Local" />
+		</classes>
+	</test>
+
+</suite>

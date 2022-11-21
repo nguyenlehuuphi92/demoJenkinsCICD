@@ -1,0 +1,13 @@
+{
+	"firstName": "Nguyen Le",
+	"lastName": "Huu Phi Json",
+	"emailAddress": "tripleLeejson",
+	"password": "123456",
+	"date": "23",
+	"month": "February",
+	"year": "1992",
+	"login": {
+		"username": "admintest",
+		"password": "123456"
+	}
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Saucelabs - Sort" parallel="false" thread-count="3">
+
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+	</listeners>
+
+	<parameter name="appUrl" value="https://www.saucedemo.com/" />
+	
+	<test name="Run on CHROME">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.saucelabs.sort.Level_19_Sort_Asc_Desc" />
+		</classes>
+	</test>
+
+
+</suite>

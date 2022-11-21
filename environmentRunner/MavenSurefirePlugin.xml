@@ -1,0 +1,40 @@
+<!-- Compiler/ Run Test -->
+<build>
+	<plugins>
+		<!-- Compiler -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.10.1</version>
+			<!-- Compiler code vs Java 11 -->
+			<configuration>
+				<release>11</release>
+			</configuration>
+		</plugin>
+		<!-- Run test -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.22.2</version>
+			<configuration>
+				<!-- Run TestNG xml file -->
+				<suiteXmlFiles>
+					<!-- <file>src/test/resources/runNopCommerceUserData_IV.xml</file> -->
+
+					<!-- Maven Surefire Plugin with run file xml -->
+					<file>environmentRunner/${environment}.xml</file>
+
+					<!-- Run Maven Command Line -->
+					<!-- mvn clean test -Denvironment=dev -->
+					<!-- mvn clean test -Denvironment=testing -->
+					<!-- mvn clean test -Denvironment=staging -->
+				</suiteXmlFiles>
+
+				<!-- Argument -->
+				<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+					</argLine>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>

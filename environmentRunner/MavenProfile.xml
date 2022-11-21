@@ -1,0 +1,76 @@
+<!-- Maven Profile -->
+<!-- Run Maven Profile Command Line -->
+<!-- mvn clean test -p DEV -->
+<!-- mvn clean test -p TESTING -->
+<!-- mvn clean test -p STAGING -->
+<profiles>
+	<profile>
+		<id>DEV</id>
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.2</version>
+					<configuration>
+						<!-- Run TestNG xml file -->
+						<suiteXmlFiles>
+							<file>environmentRunner/dev.xml</file>
+						</suiteXmlFiles>
+
+						<!-- Argument -->
+						<argLine>
+								-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+							</argLine>
+					</configuration>
+				</plugin>
+			</plugins>
+		</build>
+	</profile>
+	<profile>
+		<id>TESTING</id>
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.2</version>
+					<configuration>
+						<!-- Run TestNG xml file -->
+						<suiteXmlFiles>
+							<file>environmentRunner/testing.xml</file>
+						</suiteXmlFiles>
+
+						<!-- Argument -->
+						<argLine>
+								-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+							</argLine>
+					</configuration>
+				</plugin>
+			</plugins>
+		</build>
+	</profile>
+	<profile>
+		<id>STAGING</id>
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.2</version>
+					<configuration>
+						<!-- Run TestNG xml file -->
+						<suiteXmlFiles>
+							<file>environmentRunner/staging.xml</file>
+						</suiteXmlFiles>
+
+						<!-- Argument -->
+						<argLine>
+								-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+							</argLine>
+					</configuration>
+				</plugin>
+			</plugins>
+		</build>
+	</profile>
+</profiles>
